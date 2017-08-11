@@ -3,6 +3,14 @@ import QtQuick.Controls 2.0 as QQC2
 import "qml"
 import "qml/Style"
 
+/**
+ * The main component that will initialize the display window.
+ * NOTE  : It is mostly based on the wearable QT Tutorial
+ * NOTE 2: The Style directory and NaviButton.qml files used are directly used
+ *         from the QT tutorial
+ *
+ * @author Alejandro B. Salazar
+ */
 QQC2.ApplicationWindow {
     id: window
 
