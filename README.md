@@ -12,5 +12,7 @@ There are the following projects
 #### - Avatar UI
 A small application using QT as UI framework
 
+This application was built on a Mac with OSX 10.10.5, thus, the executable file located on `avatar-ui/exec/semc-sample.app` will only run on a OSX environment.
+
 #### - C++ sample
 Small code to show basic knowledge of the programming language along with some practices of code structure and quality.
