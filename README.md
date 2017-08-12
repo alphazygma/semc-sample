@@ -16,3 +16,7 @@ This application was built on a Mac with OSX 10.10.5, thus, the executable file 
 
 #### - C++ sample
 Small code to show basic knowledge of the programming language along with some practices of code structure and quality.
+
+The code includes using function pointers to create a Prompt to execute functions; it also uses `vector` and `pair` from the STL along with class and namespace usage to organize code.
+
+This small code is also built on a Mac with OSX 10.10.5, and the XCode project is included.

@@ -1,11 +1,3 @@
-//
-//  Jump.hpp
-//  semc-cpp-sample
-//
-//  Created by Alejandro B. Salazar on 8/11/17.
-//  Copyright © 2017 Alejandro B. Salazar. All rights reserved.
-//
-
 #ifndef Jump_hpp
 #define Jump_hpp
 

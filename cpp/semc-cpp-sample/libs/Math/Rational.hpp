@@ -47,7 +47,7 @@ namespace Math {
         Rational operator * ( const Rational & ) const;
         Rational operator / ( const Rational & ) const;
     };
-}
+} // namespace Math
 
 // Overload to allow printing the Rational object through `cout`
 std::ostream & operator << (std::ostream & o, const Math::Rational & r);
