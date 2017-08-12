@@ -23,8 +23,10 @@ namespace Pointer{
      */
     class Jump {
     private:
-        vector<void (*)()> _funcPtrList;
-        vector<string> _funcNameList;
+        // Property that contains a list where each element has
+        // A) a pointer to a function
+        // B) the name of the funnction
+        vector<pair<void (*)(), string>> _fnDataList;
 
         /** Prints the prompt options. */
         void _printPrompt();
@@ -44,7 +46,7 @@ namespace Pointer{
         void _jumpExecDelegate(int inputChar);
         
     public:
-        Jump(vector<void (*)()> funcPtrList, vector<string> funcNameList);
+        Jump(vector<pair<void (*)(), string>> fnDataList);
         
         const char * prompt();
         const string strPrompt();

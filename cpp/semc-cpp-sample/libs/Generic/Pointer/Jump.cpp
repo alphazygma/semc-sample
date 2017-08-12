@@ -13,8 +13,8 @@ void Jump::_printPrompt() {
     puts("---------------------------------------");
     puts("Choose an option:");
     int i = 0;
-    for (auto funcName : _funcNameList) {
-        printf("%d. Function %s()\n", ++i, funcName.c_str());
+    for (auto fnPair : _fnDataList) {
+        printf("%d. Function %s()\n", ++i, fnPair.second.c_str());
     }
     puts("Q. Quit.");
 }
@@ -42,11 +42,11 @@ void Jump::_jumpExecDelegate(int inputChar) {
     // Adding a new line just for formatting
     cout << endl;
     
-    if (idx < 0 || idx >= _funcPtrList.size()) {
+    if (idx < 0 || idx >= _fnDataList.size()) {
         puts("invalid choice");
     } else {
-        printf("Calling : %s()\n", _funcNameList.at(idx).c_str());;
-        _funcPtrList.at(idx)();
+        printf("Calling : %s()\n", _fnDataList.at(idx).second.c_str());;
+        _fnDataList.at(idx).first();
     }
     
     cout << endl;
@@ -55,9 +55,8 @@ void Jump::_jumpExecDelegate(int inputChar) {
 // ---------------------------------------------------------------------------
 // Implementing public methods & constructor
 
-Jump::Jump(vector<void (*)()> funcPtrList, vector<string> funcNameList) {
-    _funcPtrList  = funcPtrList;
-    _funcNameList = funcNameList;
+Jump::Jump(vector<pair<void (*)(), string>> fnDataList) {
+    _fnDataList  = fnDataList;
 }
 
 const char * Jump::prompt() {
