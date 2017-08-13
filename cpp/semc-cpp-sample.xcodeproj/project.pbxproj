@@ -11,6 +11,8 @@
 		D68C506D1F3E5A4A00F2C372 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D68C506B1F3E5A4A00F2C372 /* Rational.cpp */; };
 		D68C50701F3E620500F2C372 /* use_rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D68C506E1F3E620500F2C372 /* use_rational.cpp */; };
 		D68C50771F3E73E400F2C372 /* Jump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D68C50751F3E73E400F2C372 /* Jump.cpp */; };
+		D68C50841F3F8B7100F2C372 /* DataProviderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D68C50821F3F8B7100F2C372 /* DataProviderFactory.cpp */; };
+		D68C508A1F40181500F2C372 /* TestProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D68C50881F40181500F2C372 /* TestProvider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,11 @@
 		D68C506F1F3E620500F2C372 /* use_rational.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = use_rational.hpp; sourceTree = "<group>"; };
 		D68C50751F3E73E400F2C372 /* Jump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Jump.cpp; path = libs/Generic/Pointer/Jump.cpp; sourceTree = "<group>"; };
 		D68C50761F3E73E400F2C372 /* Jump.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Jump.hpp; path = libs/Generic/Pointer/Jump.hpp; sourceTree = "<group>"; };
+		D68C507B1F3F6E8500F2C372 /* DataProviderInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DataProviderInterface.hpp; path = libs/Data/Providers/DataProviderInterface.hpp; sourceTree = "<group>"; };
+		D68C50821F3F8B7100F2C372 /* DataProviderFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataProviderFactory.cpp; path = libs/Data/Providers/DataProviderFactory.cpp; sourceTree = "<group>"; };
+		D68C50831F3F8B7100F2C372 /* DataProviderFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DataProviderFactory.hpp; path = libs/Data/Providers/DataProviderFactory.hpp; sourceTree = "<group>"; };
+		D68C50881F40181500F2C372 /* TestProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestProvider.cpp; path = libs/Data/Providers/TestProvider.cpp; sourceTree = "<group>"; };
+		D68C50891F40181500F2C372 /* TestProvider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TestProvider.hpp; path = libs/Data/Providers/TestProvider.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 		D68C50661F3E59CE00F2C372 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				D68C50781F3F6D0100F2C372 /* Data */,
 				D68C50731F3E73AC00F2C372 /* Generic */,
 				D68C50671F3E59D300F2C372 /* Math */,
 			);
@@ -107,6 +115,26 @@
 				D68C50761F3E73E400F2C372 /* Jump.hpp */,
 			);
 			name = Pointer;
+			sourceTree = "<group>";
+		};
+		D68C50781F3F6D0100F2C372 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D68C50791F3F6D1100F2C372 /* Providers */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D68C50791F3F6D1100F2C372 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D68C507B1F3F6E8500F2C372 /* DataProviderInterface.hpp */,
+				D68C50821F3F8B7100F2C372 /* DataProviderFactory.cpp */,
+				D68C50831F3F8B7100F2C372 /* DataProviderFactory.hpp */,
+				D68C50881F40181500F2C372 /* TestProvider.cpp */,
+				D68C50891F40181500F2C372 /* TestProvider.hpp */,
+			);
+			name = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68C50841F3F8B7100F2C372 /* DataProviderFactory.cpp in Sources */,
 				D68C50701F3E620500F2C372 /* use_rational.cpp in Sources */,
 				D68C50771F3E73E400F2C372 /* Jump.cpp in Sources */,
 				D68C505D1F3E564900F2C372 /* main.cpp in Sources */,
 				D68C506D1F3E5A4A00F2C372 /* Rational.cpp in Sources */,
+				D68C508A1F40181500F2C372 /* TestProvider.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +287,7 @@
 		D68C50611F3E564900F2C372 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-I/Users/alphazygma/development/cpp/github/semc-sample/cpp/semc-cpp-sample/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -264,6 +295,7 @@
 		D68C50621F3E564900F2C372 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-I/Users/alphazygma/development/cpp/github/semc-sample/cpp/semc-cpp-sample/libs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -3,8 +3,8 @@
 
 using namespace Math;
 
-Rational::Rational ( int numerator, int denominator): _n(numerator), _d(denominator) {}
-Rational::Rational ( const Rational & rhs ) : _n(rhs._n), _d(rhs._d) {}
+Rational::Rational( int numerator, int denominator): _n(numerator), _d(denominator) {}
+Rational::Rational( const Rational & rhs ) : _n(rhs._n), _d(rhs._d) {}
 
 Rational & Rational::operator = ( const Rational & rhs ) {
     if( this != &rhs ) {

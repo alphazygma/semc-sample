@@ -17,17 +17,17 @@ namespace Math {
          * @param numerator Default 0 if no parameters are supplied
          * @param denominator Default 1 is denominator is not supplied
          */
-        Rational ( int numerator = 0, int denominator = 1 );
+        Rational(int numerator = 0, int denominator = 1);
         
         /**
          * Copy constructor
          * @param rhs Creates a new Rational object copying the numerator and denominator from the
          *            supplied object.
          */
-        Rational ( const Rational & rhs );
+        Rational(const Rational & rhs);
         
         // Destructor
-        ~Rational ();
+        ~Rational();
         
         /**
          * Getter to retrieve the numerator

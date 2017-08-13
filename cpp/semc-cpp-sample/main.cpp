@@ -1,15 +1,66 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>
+
 #include "use_rational.hpp"
-#include "libs/Generic/Pointer/Jump.hpp"
+#include "Generic/Pointer/Jump.hpp"
+#include "Data/Providers/DataProviderFactory.hpp"
 
 using namespace std;
+using namespace Data::Providers;
 
 void fa() { puts("Some random string for `fa`"); }
 void fb() { puts("Just printing this string"); }
 
+/**
+ * Small function just to show use of variable arguments function
+ */
+double variadicAverage(const int count, ...)
+{
+    va_list ap;
+    int i;
+    double total = 0.0;
+    
+    va_start(ap, count);
+    for(i = 0; i < count; ++i) {
+        total += va_arg(ap, double);
+    }
+    va_end(ap);
+    return total / count;
+}
+
 int main(int argc, const char * argv[]) {
+    
+    // ---------------------------------------------------------------------------------------------
+    cout << "Processing variadic average function" << endl;
+    int size = 5;
+    printf("avg of (3, 6, 7, 8, 50) = %f\n", variadicAverage(size, 3.0, 6.0, 7.0, 8.0, 50.0));
+    
+    // Using different ways to print a new line, just for sample purposes, in actual application,
+    // a standard way should be used for code consistency.
+    cout << endl << endl;
+
+    
+    // ---------------------------------------------------------------------------------------------
+    cout << "Processing example of provider with Factory" << endl;
+    
+    DataProviderFactory dpFactory;
+    DataProviderInterface * dp = dpFactory.getProvider(DataProviderFactory::ProviderTypeEnum::TEST);
+    
+    vector<vector<string>> data = dp->getData();
+    
+    for (auto row : data) {
+        for (auto col : row) {
+            printf("%s\t", col.c_str());
+        }
+        printf("\n");
+    }
+    
+    cout << endl << endl;
+    
+
+    // ---------------------------------------------------------------------------------------------
+    cout << "Processing Prompt with Jump functions" << endl;
     
     // Creating a list that contains the function pointer and the name of it for display on the prompt
     vector<pair<void (*)(), string>> fnDataList = {
